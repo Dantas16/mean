@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col col-sm-2">
+      <img width="100" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+    </div>
+    <div class="col col-sm-10">
+      <h1>Welcome to {{ title }}!</h1>
+    </div>    
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Products</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of products">
+            <td>{{prod.name}}</td>
+            <td>{{prod.price}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="removeProd(prod)">X</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br/><hr/><br/>
+<div class="container">
+  <form>
+    <div class="form-row">
+      <div class="form-group col">
+        <label for="nome">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="newProd.name" name="name" id="name" title="Name">
+      </div>
+      <div class="form-group col">
+        <label for="price">Price</label>
+        <input type="text" class="form-control" [(ngModel)]="newProd.price" name="price" id="price" title="Price">
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="addProd()">Add Product</button>
+  </form>
+</div>
